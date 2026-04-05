@@ -1,7 +1,7 @@
 ---
 export interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image?: {
     url: string;
     alt: string;
@@ -11,33 +11,107 @@ export interface Props {
 }
 
 const {
-  title,
-  description,
+  title = "Outreach for the Unreached Soul Winning Ministry | Online Church",
+  description = "An online Spirit-filled ministry reaching souls worldwide through live worship and the Word. Join us live every Sunday on Facebook and YouTube.",
   image = {
-    url: "/uploads/church-default.webp",
-    alt: "Church Name",
+    url: "/uploads/hero-bg.webp",
+    alt: "Outreach for the Unreached Soul Winning Ministry",
   },
   type = "website",
   canonicalUrl,
 } = Astro.props;
 
-// Get the canonical URL
 const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site);
+const siteUrl = "https://outreach-for-the-unreached-soul-winning-ministry.pages.dev";
+const imageUrl = new URL(image.url, Astro.site).toString();
+const canonicalStr = canonicalURL.toString();
 
-// Get Church address and contact info (would come from site config in a real implementation)
-const churchInfo = {
-  name: "Church Name",
-  address: {
-    streetAddress: "123 Main Street",
-    addressLocality: "Anytown",
-    addressRegion: "ST",
-    postalCode: "12345",
-    addressCountry: "US",
+const churchSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "@id": siteUrl,
+  "name": "Outreach for the Unreached Soul Winning Ministry",
+  "description": "An online Spirit-filled ministry reaching souls worldwide through live worship and the Word of God.",
+  "url": siteUrl,
+  "telephone": "+18607050042",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New London",
+    "addressRegion": "CT",
+    "addressCountry": "US"
   },
-  telephone: "+1-555-123-4567",
-  email: "info@churchname.org",
-  url: Astro.site?.toString() || "https://example.com",
-};
+  "sameAs": [
+    "https://www.facebook.com/100080165448656/",
+    "https://www.youtube.com/@pastorreginalddublin3943"
+  ],
+  "event": [
+    {
+      "@type": "Event",
+      "name": "Sunday Worship Service",
+      "description": "Live Sunday worship service streamed on Facebook and YouTube.",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://www.facebook.com/100080165448656/"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Outreach for the Unreached Soul Winning Ministry",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Tuesday Bible Study",
+      "description": "Weekly Bible study streamed live every Tuesday at 6:30 PM.",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://www.facebook.com/100080165448656/"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Outreach for the Unreached Soul Winning Ministry",
+        "url": siteUrl
+      }
+    }
+  ]
+});
+
+const pastorSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Reginald Dublin",
+  "jobTitle": "Pastor",
+  "worksFor": {
+    "@type": "Church",
+    "@id": siteUrl
+  },
+  "sameAs": [
+    "https://www.facebook.com/100080165448656/",
+    "https://www.youtube.com/@pastorreginalddublin3943"
+  ]
+});
+
+const articleSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "image": imageUrl,
+  "description": description,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Outreach for the Unreached Soul Winning Ministry",
+    "url": siteUrl
+  },
+  "url": canonicalStr,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalStr
+  }
+});
 ---
 
 <!-- Basic SEO -->
@@ -50,60 +124,25 @@ const churchInfo = {
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.url, Astro.site)} />
+<meta property="og:image" content={imageUrl} />
 <meta property="og:image:alt" content={image.alt} />
+<meta property="og:site_name" content="Outreach for the Unreached Soul Winning Ministry" />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.url, Astro.site)} />
-<meta property="twitter:image:alt" content={image.alt} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:image:alt" content={image.alt} />
 
-<!-- JSON-LD Schema for Church -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Church",
-    "name": "${churchInfo.name}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "${churchInfo.address.streetAddress}",
-      "addressLocality": "${churchInfo.address.addressLocality}",
-      "addressRegion": "${churchInfo.address.addressRegion}",
-      "postalCode": "${churchInfo.address.postalCode}",
-      "addressCountry": "${churchInfo.address.addressCountry}"
-    },
-    "telephone": "${churchInfo.telephone}",
-    "email": "${churchInfo.email}",
-    "url": "${churchInfo.url}"
-  }
-</script>
+<!-- Church JSON-LD Schema -->
+<Fragment set:html={`<script type="application/ld+json">${churchSchema}</script>`} />
 
-{
-  type === "article" && (
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "${title}",
-        "image": "${new URL(image.url, Astro.site)}",
-        "description": "${description}",
-        "publisher": {
-          "@type": "Organization",
-          "name": "${churchInfo.name}",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "${new URL("/uploads/logo.png", Astro.site)}"
-          }
-        },
-        "url": "${canonicalURL}",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "${canonicalURL}"
-        }
-      }
-    </script>
-  )
-}
+<!-- Pastor JSON-LD Schema -->
+<Fragment set:html={`<script type="application/ld+json">${pastorSchema}</script>`} />
+
+<!-- Article Schema (sermon/blog pages only) -->
+{type === "article" && (
+  <Fragment set:html={`<script type="application/ld+json">${articleSchema}</script>`} />
+)}
