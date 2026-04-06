@@ -1,25 +1,18 @@
 ---
-title: "Church Office & Activity Hours"
+title: "Connect with us"
 ---
 
-Here are the operational hours for our church office and main activities:
+We are an **online-only ministry** — there is no walk-in office or physical campus.
 
-### Church Office Hours
+### How to reach us
 
-*   **Monday - Friday:** 9:00 AM - 5:00 PM
-*   **Saturday:** 9:00 AM - 1:00 PM
-*   **Sunday & Public Holidays:** Closed (except for scheduled services/events)
+*   **Phone:** See our [contact page](/contact) for the ministry phone number.
+*   **Email & messages:** Use the contact form on our [contact page](/contact) — we respond as soon as we can.
+*   **Social:** Follow us on Facebook and YouTube for live services, Bible study, and updates.
 
-For urgent matters outside of office hours, please use the emergency contact number provided on our contact page.
+### Regular online gatherings
 
-### Main Services & Activities
+*   **Sunday worship:** Live on Facebook & YouTube (see our pages for times).
+*   **Tuesday Bible study:** 6:30 PM, live on Facebook.
 
-*   **Sunday Worship Service:**
-    *   1st Service: 8:00 AM
-    *   2nd Service: 10:30 AM (with Children's Ministry)
-*   **Youth Group:** Fridays, 7:00 PM
-*   **Mid-week Prayer Meeting:** Wednesdays, 7:00 PM
-*   **Women's Fellowship:** Every 2nd Tuesday, 10:00 AM
-*   **Men's Breakfast:** Every 1st Saturday, 8:00 AM
-
-_Please note: Schedules are subject to change. Always check the weekly bulletin or events page for the latest information._
+_Schedules may change — check our social channels or events page for the latest._

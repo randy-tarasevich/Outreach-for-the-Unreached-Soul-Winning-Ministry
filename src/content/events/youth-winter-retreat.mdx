@@ -2,8 +2,8 @@
 title: "Youth Winter Retreat 2025: Unshakeable Faith"
 date: 2025-02-14
 endDate: 2025-02-16
-time: "Departure: 4:00 PM Friday | Return: 2:00 PM Sunday"
-location: "Mountain View Retreat Center"
+time: "Friday evening through Sunday (online schedule)"
+location: "Online"
 image: "/uploads/events/winter-retreat-2025.webp"
 summary: "A transformative weekend of worship, fellowship, and winter fun for students grades 6-12."
 tags: ["youth", "retreat", "winter"]

@@ -5,7 +5,7 @@ logo: "/uploads/ministries/childrens-ministry-logo.webp"
 summary: "Nurturing children ages 0-12 in their faith journey through engaging, age-appropriate programs that teach God's love."
 coordinator: "Mrs. Jennifer Davis"
 contact: "children@churchname.org"
-schedule: "Sunday School: 9:15 AM | Children's Church: 10:30 AM | Wednesday Kids Club: 6:30 PM"
+schedule: "Resources and encouragement for families watching online — contact us for details"
 order: 1
 draft: false
 ---
@@ -34,14 +34,14 @@ To partner with parents in raising children who know, love, and follow Jesus Chr
 - Service projects
 - Scripture memorization programs
 
-## Weekly Schedule
+## At home with your kids
 
-### Sunday Programs
-- **9:15 AM**: Sunday School for all ages
-- **10:30 AM**: Children's Church (during main service)
+Families often watch our livestreams together. We encourage parents to talk through the message, pray, and use simple activities at home. Contact us if you would like ideas matched to your children’s ages.
 
-### Wednesday Programs
-- **6:30 PM**: Kids Club with dinner, games, and Bible study
+### Optional connection points
+- Family discussion guides (by request)
+- Prayer and praise shared in live chat (parent-led)
+- Seasonal online activities announced on our Facebook page
 
 ## Special Events
 

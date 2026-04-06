@@ -5,7 +5,7 @@ logo: "/uploads/ministries/worship-logo.webp"
 summary: "Leading our congregation in Spirit-filled worship through music, song, and creative expression."
 coordinator: "David Wilson"
 contact: "worship@churchname.org"
-schedule: "Rehearsals: Thursday 7:00 PM | Sunday Services: 8:00 AM & 10:30 AM"
+schedule: "Worship for our online services — see Facebook & YouTube for live times"
 order: 2
 draft: false
 ---

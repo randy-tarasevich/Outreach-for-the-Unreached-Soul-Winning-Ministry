@@ -2,8 +2,8 @@
 title: "Easter Celebration: He Is Risen!"
 date: 2025-04-20
 endDate: 2025-04-20
-time: "8:00 AM & 10:30 AM Services"
-location: "Main Sanctuary"
+time: "See Facebook & YouTube for live times"
+location: "Online — Facebook & YouTube"
 image: "/uploads/events/easter-celebration.webp"
 summary: "Join us for a joyful celebration of Christ's resurrection with special music, inspiring messages, and fellowship."
 tags: ["easter", "celebration", "special service"]
